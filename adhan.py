@@ -7,7 +7,7 @@ while True:
         from datetime import datetime, time
 
 
-        website = 'https://www.halaltrip.com/prayertimes/muslim-salat-prayer-times/?name=Slough&f=Slough%2C+UK&l=Slough&s=&c=United+Kingdom&lat=51.4989355&lng=-0.5612772&no_days=7&cal_method=3&asr_method=2&higher_lat=2&cruising_height=11800' #Change the URL to the placve you live
+        website = 'https://www.halaltrip.com/prayertimes/muslim-salat-prayer-times/?name=Chennai&f=Chennai%2C+Tamil+Nadu%2C+India&l=Chennai&s=&c=India&lat=13.0826802&lng=80.2707184&no_days=7&cal_method=3&asr_method=2&higher_lat=2&cruising_height=11800' #Change the URL to the placve you live
         result = requests.get(website)
         content = result.text
 
