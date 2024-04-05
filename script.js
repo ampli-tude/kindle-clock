@@ -195,13 +195,15 @@ function minuteChanged() {
 
     var tracktime;
     var hrs24;
-    if (isDaylightSavingTime()) {
-      tracktime = moment().add(1, 'hour').format('MMDDHHmm');
-      hrs24 = moment().add(1, 'hour').format('HHmm');
-    } else {
-      tracktime = moment().format('MMDDHHmm');
-      hrs24 = moment().format('HHmm');
-    }
+    tracktime = moment().format('MMDDHHmm');
+    hrs24 = moment().format('HHmm');
+    // if (isDaylightSavingTime()) {
+    //   tracktime = moment().add(1, 'hour').format('MMDDHHmm');
+    //   hrs24 = moment().add(1, 'hour').format('HHmm');
+    // } else {
+    //   tracktime = moment().format('MMDDHHmm');
+    //   hrs24 = moment().format('HHmm');
+    // }
 
 
     if (
