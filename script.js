@@ -3,23 +3,6 @@ function displayTime(){
   var hrs = dateTime.getHours();
   var min = dateTime.getMinutes();
 
-
-  function isDaylightSavingTime() {
-    const today = new Date();
-    const month = today.getMonth();
-    const lastSundayInMarch = new Date(today.getFullYear(), 2, 31 - new Date(today.getFullYear(), 2, 31).getDay());
-    const lastSundayInOctober = new Date(today.getFullYear(), 9, 31 - new Date(today.getFullYear(), 9, 31).getDay());
-    const dstResult = (today >= lastSundayInMarch && today < lastSundayInOctober) ? 1 : 0;
-    if (dstResult == 1) {
-      hrs += 1;
-    }
-    return dstResult;
-  }
-
-
-  isDaylightSavingTime();
-
-
   if (hrs == 0){
       hrs = hrs +12
   }
@@ -179,32 +162,10 @@ function minuteChanged() {
       (sunHours === 1 ? sunHours + " Hour, " : sunHours + " Hours, ") +
       (sunMinutes === 1 ? sunMinutes + " Minute" : sunMinutes + " Minutes").replace("1 Minutes", "1 Minute");
 
-
-  function isDaylightSavingTime() {
-      const today = new Date();
-      const month = today.getMonth();
-      const lastSundayInMarch = new Date(today.getFullYear(), 2, 31 - new Date(today.getFullYear(), 2, 31).getDay());
-      const lastSundayInOctober = new Date(today.getFullYear(), 9, 31 - new Date(today.getFullYear(), 9, 31).getDay());
-      const dstResult = (today >= lastSundayInMarch && today < lastSundayInOctober) ? 1 : 0;
-      if (dstResult === 1) {
-        return true;
-      }
-      return false;
-    }
-
-
     var tracktime;
     var hrs24;
     tracktime = moment().format('MMDDHHmm');
     hrs24 = moment().format('HHmm');
-    // if (isDaylightSavingTime()) {
-    //   tracktime = moment().add(1, 'hour').format('MMDDHHmm');
-    //   hrs24 = moment().add(1, 'hour').format('HHmm');
-    // } else {
-    //   tracktime = moment().format('MMDDHHmm');
-    //   hrs24 = moment().format('HHmm');
-    // }
-
 
     if (
       hrs24 == '0645' ||
