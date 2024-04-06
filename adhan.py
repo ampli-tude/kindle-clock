@@ -5,6 +5,7 @@ while True:
         from bs4 import BeautifulSoup
         import requests
         from datetime import datetime, time
+        import pytz
 
 
         website = 'https://www.halaltrip.com/prayertimes/muslim-salat-prayer-times/?name=Chennai&f=Chennai%2C+Tamil+Nadu%2C+India&l=Chennai&s=&c=India&lat=13.0826802&lng=80.2707184&no_days=7&cal_method=3&asr_method=2&higher_lat=2&cruising_height=11800' #Change the URL to the placve you live
@@ -44,8 +45,8 @@ while True:
         maghribHour, maghribMin = map(int, lines[4].split(':'))
         ishaHour, ishaMin = map(int, lines[5].split(':'))
 
-
-        current_time = datetime.now().time()
+        kolkata_tz = pytz.timezone('Asia/Kolkata')
+        current_time = datetime.now(kolkata_tz).time()
 
 
         fajr_time = time(fajrHour, fajrMin)
